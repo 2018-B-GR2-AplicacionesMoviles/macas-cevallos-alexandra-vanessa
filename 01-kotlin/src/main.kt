@@ -55,8 +55,13 @@ fun main(args: Array<String>){
     val sueldoTotal = calcularSueldo(bono)
     println(sueldoTotal)
 
-    val adrian = Usuario("Adrian", vApellido:"Eguez", vApellidoMaterno: "sd")
+    val adrian = Usuario("Adrian")
     println(adrian)
+
+    println (BaseDeDatos.Usuarios)//[]
+  BaseDeDatos.agregarUsuario(nombre = "ale")
+    println(BaseDeDatos.Usuarios) //["Adrian"]
+
 
 }
 
@@ -96,5 +101,57 @@ class Usuario(public var nombre:String){ // 1ero
         return "hola $nombre $apellidoMayuscula"
     }
 }
+
+//si esta opaco se sobre entiende que es un propiedad publica
+//open es de una clase que se puede heredar
+//abstract no poder instaciar una calse de tipo animal
+
+open class Animal (var nombre: String) {
+
+
+}
+class Tortuga(nombre:String,
+              var pesoCaparazon:Double):Animal(nombre){
+init {
+    println("$nombre $pesoCaparazon")
+}
+
+}
+
+var animal = Animal( nombre = "caballo")
+var goere = Tortuga("George", 12.5)
+
+class Ejemplo{
+    var nombre:String
+    constructor(nNombre: String){
+        println("Estoy en el constructor   ")
+    nombre = nNombre
+    }
+init {
+    println("Estoy en el init")
+}
+
+}
+
+val ejemplo = Ejemplo(nNombre = "Adrian")
+
+// <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+
+class BaseDeDatos{
+    companion object {
+        val Usuarios:ArrayList<String> = ArrayList()
+        fun agregarUsuario(nombre:String){
+            Usuarios.add(nombre)
+        }
+
+    }
+}
+
+fun datosIniciales(){
+    BaseDeDatos.agregarUsuario(nombre = "Ale")
+}
+
+
+
 
 
