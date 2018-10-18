@@ -62,6 +62,18 @@ fun main(args: Array<String>){
   BaseDeDatos.agregarUsuario(nombre = "ale")
     println(BaseDeDatos.Usuarios) //["Adrian"]
 
+    val medicina1= Medicina()
+    val medicina2= Medicina()
+    val medicina3= Medicina()
+    medicina1.nombreMedicina= "Ejemplo1"
+    medicina2.nombreMedicina= "Ejemplo2"
+    medicina3.nombreMedicina= "Ejemplo3"
+    BaseDeDatosMedicina.agregarMedicina(medicina1)
+    BaseDeDatosMedicina.agregarMedicina(medicina2)
+    BaseDeDatosMedicina.agregarMedicina(medicina3)
+    println(BaseDeDatosMedicina.lstMedicina)
+    BaseDeDatosMedicina.buscarMedicina("Ejemplo1")
+
 
 }
 
