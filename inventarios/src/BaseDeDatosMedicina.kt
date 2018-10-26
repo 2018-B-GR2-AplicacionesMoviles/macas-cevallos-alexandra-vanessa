@@ -1,6 +1,9 @@
+import javax.swing.*;
 class BaseDeDatosMedicina {
     companion object {
+
         val lstMedicina: ArrayList<Medicina> = ArrayList()
+        var lstRecetas:ArrayList<Recetas> = ArrayList()
 
         fun agregarMedicina(medicina: Medicina) {
             lstMedicina.add(medicina)
@@ -8,7 +11,15 @@ class BaseDeDatosMedicina {
 
         fun mostrarMedicinas() {
             for (item: Medicina in lstMedicina) {
-                println(item.codigoMedicina + "\t" + item.nombreMedicina + "\t" + item.tipoMedicina + "\t" + item.fechaCaducidadMedicina + "\t" + item.cantidadMedicina)
+                JOptionPane.showMessageDialog(null,item.codigoMedicina + "\n" + item.nombreMedicina + "\n" + item.tipoMedicina + "\n" + item.fechaCaducidadMedicina + "\n" + item.cantidadMedicina)
+               // println(item.codigoMedicina + "\t" + item.nombreMedicina + "\t" + item.tipoMedicina + "\t" + item.fechaCaducidadMedicina + "\t" + item.cantidadMedicina)
+            }
+        }
+
+        fun mostrarReceta() {
+            for (item: Recetas in lstRecetas) {
+                JOptionPane.showMessageDialog(null, item.mediamento +"\n" +item.nombreCliente + "\n" + item.apellidoCliente + "\n" + item.cedulaCliente + "\n" + item.detalle)
+                // println(item.codigoMedicina + "\t" + item.nombreMedicina + "\t" + item.tipoMedicina + "\t" + item.fechaCaducidadMedicina + "\t" + item.cantidadMedicina)
             }
         }
 
@@ -16,54 +27,36 @@ class BaseDeDatosMedicina {
             for (i in lstMedicina.indices) {
                 if (lstMedicina[i].nombreMedicina.equals(nombre)) {
                     lstMedicina.removeAt(i)
-                    println("Eliminado")
+                    JOptionPane.showMessageDialog(null, "Eliminado")
+                    //println("Eliminado")
                 }
             }
         }
 
-        fun formarRecetas(nombre: String) {
-            var recetas = Recetas()
-            var opcion: Int = 0
-            for (item: Medicina in lstMedicina) {
-                if (item.nombreMedicina.equals(nombre)) {
-                    recetas.lstRecetas.add(item)
-                }
-            }
-        }
 
-        fun agregarReceta() {
-            var nombreMedicamiento:String
-            var receta = Recetas()
+        fun agregarReceta(receta: Recetas) {
 
-            println("Ingrese nombre cliente")
-            receta.nombreCliente = readLine()?.toString() as String
-            println("Ingrese el apellido")
-            receta.apellidoCliente = readLine()?.toString() as String
-            println("Ingrese la cedula")
-            receta.cedulaCliente = readLine()?.toString() as String
-            println("Detalle de la receta")
-            receta.detalle = readLine()?.toString() as String
-            println("Nombre completo |" +"\t" +"|Cedula|")
-            println(  receta.nombreCliente + receta.apellidoCliente +"\t"+  receta.cedulaCliente)
-            println("Detalle de la receta")
-            println("\t"+ receta.detalle)
+            lstRecetas.add(receta)
+
                     }
 
         fun BuscarReceta(nombre: String): Medicina {
             var opcion: Int = 0
             var receta = Medicina()
+            var recetass = Recetas()
             for (item: Medicina in lstMedicina) {
                 if (item.nombreMedicina.equals(nombre)) {
-                    println("Medicamento seleccionado")
-                    println(item.nombreMedicina)
-                    agregarReceta()
+                    recetass.mediamento = item.nombreMedicina
+                    JOptionPane.showMessageDialog(null, "Medicamento seleccionado" + "\n"+ item.nombreMedicina )
+
+             //       println("Medicamento seleccionado")
+             //       println(item.nombreMedicina)
 
                     receta = item
                 }
             }
 
 
-                    println("\n"+"Gracias por la compra")
             return receta
         }
     }
