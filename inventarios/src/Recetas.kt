@@ -1,8 +1,8 @@
 class Recetas {
-    var nombreMedicamentoRe: String=""
+var mediamento:String=""
     var nombreCliente:String = ""
     var apellidoCliente:String = ""
-    var cedulaCliente:String = ""
+    var cedulaCliente:Int = 0
     var detalle:String=""
-    var lstRecetas:ArrayList<Medicina> = ArrayList()
+
 }
