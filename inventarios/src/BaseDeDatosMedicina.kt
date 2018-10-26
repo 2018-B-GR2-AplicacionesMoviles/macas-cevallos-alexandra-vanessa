@@ -11,14 +11,14 @@ class BaseDeDatosMedicina {
 
         fun mostrarMedicinas() {
             for (item: Medicina in lstMedicina) {
-                JOptionPane.showMessageDialog(null,item.codigoMedicina + "\n" + item.nombreMedicina + "\n" + item.tipoMedicina + "\n" + item.fechaCaducidadMedicina + "\n" + item.cantidadMedicina)
+                JOptionPane.showMessageDialog(null,"Codigo de medicina: "+item.codigoMedicina + "\n" + "Nombre de la medicina: "+item.nombreMedicina + "\n" + "Tipo de mediciana: "+ item.tipoMedicina + "\n" + "Fecha de Caducidad: "+item.fechaCaducidadMedicina + "\n" + "Cantidad"+item.cantidadMedicina)
                // println(item.codigoMedicina + "\t" + item.nombreMedicina + "\t" + item.tipoMedicina + "\t" + item.fechaCaducidadMedicina + "\t" + item.cantidadMedicina)
             }
         }
 
         fun mostrarReceta() {
             for (item: Recetas in lstRecetas) {
-                JOptionPane.showMessageDialog(null, item.mediamento +"\n" +item.nombreCliente + "\n" + item.apellidoCliente + "\n" + item.cedulaCliente + "\n" + item.detalle)
+                JOptionPane.showMessageDialog(null, "Medicina: "+item.mediamento +"\n" +"Nombre del Cliente: "+item.nombreCliente + "\n" + "Apellido del cliente: "+ item.apellidoCliente + "\n" + "Cedula del cliente: "+item.cedulaCliente + "\n" + "Detalle de la receta: "+item.detalle)
                 // println(item.codigoMedicina + "\t" + item.nombreMedicina + "\t" + item.tipoMedicina + "\t" + item.fechaCaducidadMedicina + "\t" + item.cantidadMedicina)
             }
         }
