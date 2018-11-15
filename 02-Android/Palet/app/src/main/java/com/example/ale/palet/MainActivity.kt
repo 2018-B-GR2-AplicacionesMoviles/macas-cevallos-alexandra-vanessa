@@ -27,8 +27,11 @@ class MainActivity : AppCompatActivity() {
 
             }
         }
-        pantalla4button.setOnClickListener {
+        imageButton2.setOnClickListener {
             irApantallacuatro()
+        }
+        horizontal_button.setOnClickListener(){
+            irApantalla3()
         }
 
 
@@ -40,6 +43,11 @@ class MainActivity : AppCompatActivity() {
     }
     fun irApantallacuatro(){
         var intentIrPantalla = Intent(this,pantalla4::class.java)
+        startActivity(intentIrPantalla)
+    }
+    fun irApantalla3()
+    {
+        var intentIrPantalla = Intent(this,pantalla3::class.java)
         startActivity(intentIrPantalla)
     }
 
