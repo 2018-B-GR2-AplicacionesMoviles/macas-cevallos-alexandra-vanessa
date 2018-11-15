@@ -16,20 +16,30 @@ class MainActivity : AppCompatActivity() {
         Ingresar_login_Btn.setOnClickListener{
 
             var nom =nombre_editxt.getText().toString()
-        var pass=pass_editxt.getText().toString()
+           var pass=pass_editxt.getText().toString()
             if (nom.equals("Ale")&&pass.equals("123") ) {
                 irApantallados()
+                Toast.makeText(this, "Bienvenido",Toast.LENGTH_SHORT).show()
             }
             else
             {
-                Toast.makeText(this, "Usuario Incorrecto",Toast.LENGTH_SHORT)
+                Toast.makeText(this, "Usuario Incorrecto",Toast.LENGTH_SHORT).show()
+
             }
         }
+        pantalla4button.setOnClickListener {
+            irApantallacuatro()
+        }
+
 
 
     }
     fun irApantallados(){
    var intentIrPantalla = Intent(this,pantallados::class.java)
+        startActivity(intentIrPantalla)
+    }
+    fun irApantallacuatro(){
+        var intentIrPantalla = Intent(this,pantalla4::class.java)
         startActivity(intentIrPantalla)
     }
 

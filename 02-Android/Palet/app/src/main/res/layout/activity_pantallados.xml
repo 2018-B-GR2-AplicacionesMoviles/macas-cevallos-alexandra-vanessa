@@ -16,16 +16,17 @@
             app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintVertical_bias="0.014"/>
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.96"
+            app:layout_constraintVertical_bias="0.115"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/email_editText2" app:layout_constraintStart_toStartOf="@+id/nombreeditText"
-            app:layout_constraintEnd_toEndOf="@+id/nombreeditText" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/nombreeditText"/>
+            app:layout_constraintEnd_toEndOf="@+id/nombreeditText"
+            app:layout_constraintTop_toBottomOf="@+id/nombreeditText" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="12dp"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -33,62 +34,69 @@
             android:ems="10"
             android:id="@+id/phone_editText3" app:layout_constraintStart_toStartOf="@+id/email_editText2"
             app:layout_constraintEnd_toEndOf="@+id/email_editText2" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/email_editText2"/>
+            app:layout_constraintTop_toBottomOf="@+id/email_editText2" app:layout_constraintHorizontal_bias="0.0"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPostalAddress"
             android:ems="10"
             android:id="@+id/postal_editText4" app:layout_constraintStart_toStartOf="@+id/phone_editText3"
-            app:layout_constraintEnd_toEndOf="@+id/phone_editText3" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/phone_editText3"/>
+            app:layout_constraintEnd_toEndOf="@+id/phone_editText3"
+            app:layout_constraintTop_toBottomOf="@+id/phone_editText3" app:layout_constraintHorizontal_bias="0.0"
+            android:layout_marginTop="12dp"/>
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="213dp"
+            android:layout_height="45dp"
             android:inputType="date"
             android:ems="10"
             android:id="@+id/date_editText5" app:layout_constraintStart_toStartOf="@+id/postal_editText4"
-            app:layout_constraintEnd_toEndOf="@+id/postal_editText4" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/postal_editText4"/>
+            app:layout_constraintEnd_toEndOf="@+id/postal_editText4"
+            app:layout_constraintTop_toBottomOf="@+id/postal_editText4" app:layout_constraintHorizontal_bias="1.0"
+            android:layout_marginTop="12dp" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.011"/>
     <ListView
-            android:layout_width="325dp"
-            android:layout_height="121dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/date_editText5"
-            android:id="@+id/lista_dynamic" android:scrollbars="horizontal|vertical" android:layout_marginTop="128dp"
-    />
+            android:layout_width="241dp"
+            android:layout_height="149dp"
+            android:id="@+id/lista_dynamic" android:scrollbars="horizontal|vertical"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintEnd_toEndOf="@+id/textView9" android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView9"/>
     <Button
             android:text="Guardar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/guardar_button" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/lista_dynamic"
+            android:layout_width="93dp"
+            android:layout_height="59dp"
+            android:id="@+id/guardar_button"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@+id/date_editText5"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.071" app:layout_constraintVertical_bias="0.829"/>
+            app:layout_constraintHorizontal_bias="0.99" android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0.865" app:layout_constraintTop_toBottomOf="@+id/date_editText5"
+            app:layout_constraintStart_toStartOf="@+id/radioButton"/>
     <TextView
             android:text="Nombre completo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4" android:layout_marginTop="24dp"
+            android:id="@+id/textView4" android:layout_marginTop="68dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" app:layout_constraintEnd_toStartOf="@+id/nombreeditText"
-            android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.439"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintEnd_toEndOf="parent"/>
     <TextView
             android:text="Email"
             android:layout_width="52dp"
             android:layout_height="20dp"
-            android:id="@+id/textView5" android:layout_marginTop="32dp"
+            android:id="@+id/textView5" android:layout_marginTop="40dp"
             app:layout_constraintTop_toBottomOf="@+id/textView4" app:layout_constraintStart_toStartOf="@+id/textView4"
-    />
+            app:layout_constraintEnd_toEndOf="@+id/textView4" app:layout_constraintHorizontal_bias="0.0"/>
     <TextView
             android:text="Telefono"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView6" android:layout_marginTop="40dp"
+            android:id="@+id/textView6" android:layout_marginTop="44dp"
             app:layout_constraintTop_toBottomOf="@+id/textView5" app:layout_constraintEnd_toEndOf="@+id/textView5"
-            app:layout_constraintStart_toStartOf="@+id/textView5" app:layout_constraintHorizontal_bias="0.0"/>
+            app:layout_constraintStart_toStartOf="@+id/textView5" app:layout_constraintHorizontal_bias="0.25"/>
     <TextView
             android:text="Postal"
             android:layout_width="wrap_content"
@@ -100,50 +108,68 @@
             android:text="Fecha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView8" app:layout_constraintEnd_toEndOf="@+id/textView7"
-            app:layout_constraintStart_toStartOf="@+id/textView7" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" app:layout_constraintHorizontal_bias="1.0"/>
+            android:id="@+id/textView8"
+            android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" app:layout_constraintEnd_toEndOf="@+id/textView7"
+            app:layout_constraintStart_toStartOf="@+id/textView7" android:layout_marginStart="8dp"/>
     <CheckBox
             android:text="Estudiante"
             android:layout_width="102dp"
             android:layout_height="32dp"
             android:id="@+id/checkBox"
             android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/date_editText5" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/lista_dynamic" app:layout_constraintHorizontal_bias="0.593"
-            app:layout_constraintVertical_bias="0.413" app:layout_constraintEnd_toEndOf="parent"/>
-    <CheckBox
-            android:text="Empleado"
-            android:layout_width="114dp"
-            android:layout_height="30dp"
-            android:id="@+id/checkBox2"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="184dp" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox"/>
+            android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
+            app:layout_constraintHorizontal_bias="0.03"
+            app:layout_constraintVertical_bias="0.002" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+    <CheckBox
+            android:text="Profesor"
+            android:layout_width="93dp"
+            android:layout_height="33dp"
+            android:id="@+id/m_checkBox2"
+            android:layout_marginStart="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.038" android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.0" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/checkBox"/>
     <RadioButton
             android:text="F"
-            android:layout_width="wrap_content"
+            android:layout_width="52dp"
             android:layout_height="wrap_content"
             android:id="@+id/radioButton" app:layout_constraintStart_toStartOf="@+id/date_editText5"
-            app:layout_constraintEnd_toEndOf="@+id/date_editText5" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/date_editText5" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/checkBox" app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintVertical_bias="0.375"/>
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/date_editText5" app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintTop_toBottomOf="@+id/date_editText5"/>
     <RadioButton
             android:text="M"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/radioButton2" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/date_editText5" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@+id/checkBox" app:layout_constraintEnd_toEndOf="@+id/date_editText5"
-            app:layout_constraintStart_toStartOf="@+id/date_editText5" app:layout_constraintHorizontal_bias="0.426"
-            app:layout_constraintVertical_bias="0.333"/>
+            android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/date_editText5" app:layout_constraintHorizontal_bias="0.628"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintTop_toBottomOf="@+id/date_editText5"/>
     <TextView
             android:text="Sexo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView9" app:layout_constraintEnd_toEndOf="@+id/textView8"
-            app:layout_constraintStart_toStartOf="@+id/textView8" android:layout_marginTop="36dp"
+            android:id="@+id/textView9"
+            app:layout_constraintStart_toStartOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="@+id/textView8" android:layout_marginTop="52dp"
             app:layout_constraintTop_toBottomOf="@+id/textView8" app:layout_constraintHorizontal_bias="0.0"/>
+    <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/a_checkBox2" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0.0" android:text="Administrativo" android:layout_marginEnd="24dp"
+            app:layout_constraintTop_toTopOf="parent"/>
 </android.support.constraint.ConstraintLayout>

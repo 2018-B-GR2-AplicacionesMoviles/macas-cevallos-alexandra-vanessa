@@ -18,6 +18,18 @@
         </activity>
         <activity android:name=".pantallados">
         </activity>
+        <activity android:name=".pantalla3">
+        </activity>
+
+
+
+        <activity android:name=".pantalla4">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

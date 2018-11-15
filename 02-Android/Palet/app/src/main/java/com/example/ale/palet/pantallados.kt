@@ -46,10 +46,38 @@ class pantallados : AppCompatActivity() {
             var postal = postal_editText4.getText().toString()
             var date = date_editText5.getText().toString()
 
-            datos.add("\n nombre: "+nombre + "\n email:" +email + "\n Celular:"+ phone + "\n postal:" + postal +"\n fecha de registro:"+ date)
+            var seleccion = checkBox
+            var seleccion2 = m_checkBox2
+            var seleccion3 = a_checkBox2
+            var empleado = ""
+            var estudiante = ""
+            var admin = ""
+
+            if (seleccion.isChecked == true ) {
+                estudiante = "Estudiante"
+                datos.add("Tipo"+estudiante)
+                seleccion.isChecked = false
+            }
+            if (seleccion2.isChecked == true){
+                empleado= "Profesor"
+                datos.add("Tipo" +empleado)
+            }
+            if (seleccion3.isChecked == true){
+                admin= "Administartivo"
+                datos.add("Tipo" +admin)
+            }
+//eliminar, se busca, se leimna y se responde como 6 pasos
+//si dividimos cada uno nada mas que pensar y procesar
+//no usar en estar un menu (promesa)
+
+
+           datos.add("\n nombre: "+nombre + "\n email:" +email + "\n Celular:"+ phone + "\n postal:" + postal +"\n fecha de registro:"+ date)
             val adapterUser = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, datos)
             lista.adapter = adapterUser
             lista.deferNotifyDataSetChanged()
+            nombre.equals("")
+
+
         }
 
 
