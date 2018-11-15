@@ -10,56 +10,45 @@ fun activarAplicacion(){
     if (seleccion.toString().equals("Cancel")){
         estado=1
     }
-    // println("El usuario ha escrito $seleccion")
- //   println("Bienvenido selecione (1) para ingresar al iventario o (0) para salir:")
+
 
 num = seleccion.toInt()
-  //  num = readLine()?.toInt() as Int
+
     when (num) {
         1 -> {
             var opcion: Int
         //    println("Inventario")
             val agregar = JOptionPane.showInputDialog("Seleccione una opción:"+"\n"+"1. Agregar Inventario" + "\n" + "2. Eliminar Inventario" + "\n" + "3. Mostrar Medicamento" + "\n" + "4. Construir Receta"+"\n"+"5. mostrarReceta" + "\n" + "6. Fin del inventario")
-        //    println("1. Agregar Inventario" + "\n" + "2. Eliminar Inventario" + "\n" + "3. Mostrar Medicamento" + "\n" + "4. Construir Receta" + "\n" + "5. Fin del inventario")
-        //    println("Seleccione una opción:")
-        //    opcion = readLine()?.toInt() as Int
+
             opcion = agregar.toInt()
             when (opcion) {
                 1 -> {
                     var medicina = Medicina()
                     val codigo = JOptionPane.showInputDialog("Ingrese los datos solicitados en el inventario"+ "\n"+ "Codigo del medicamento")
-          //          println("Ingrese los datos solicitados en el inventario")
 
-                 //   println("Codigo del medicamento")
                     medicina.codigoMedicina = codigo.toString()
-                   // println("Nombre del medicamento")
+
                     val nombreM = JOptionPane.showInputDialog("Ingrese los datos solicitados en el inventario"+ "\n"+ "Nombre del medicamento")
-                  //  medicina.nombreMedicina = readLine()?.toString() as String
+
                     medicina.nombreMedicina = nombreM.toString()
-                   // println("Tipo del medicamento")
-                //    medicina.tipoMedicina = readLine()?.toString() as String
+
                     val tipoM = JOptionPane.showInputDialog("Ingrese los datos solicitados en el inventario"+ "\n"+ "Tipo del medicamento")
                         medicina.tipoMedicina = tipoM.toString()
                     val fechaM = JOptionPane.showInputDialog("Ingrese los datos solicitados en el inventario"+ "\n"+ "Fecha de caducidad del medicamento (YYYY/MM/DD)")
                     medicina.fechaCaducidadMedicina = fechaM.toString()
-               //     println("Fecha de caducidad del medicamento (YYYY/MM/DD)")
-                //    medicina.fechaCaducidadMedicina = readLine()?.toString() as String
+
                     val descripcionM = JOptionPane.showInputDialog("Ingrese los datos solicitados en el inventario"+ "\n"+ "Descripcion del medicamento")
                     medicina.descripcionUsoMedicina = descripcionM.toString()
-                    //     println("Descripcion del medicamento")
-               //     medicina.descripcionUsoMedicina = readLine()?.toString() as String
+
                     val costoM = JOptionPane.showInputDialog("Ingrese los datos solicitados en el inventario"+ "\n"+ "Costo del medicamento (0.00)")
                     medicina.costoMedicina = costoM.toDouble()
-                    //     println("Costo del medicamento (0.00)")
-               //     medicina.costoMedicina = readLine()?.toDouble() as Double
+
                     val ObservacionM = JOptionPane.showInputDialog("Ingrese los datos solicitados en el inventario"+ "\n"+ "Observacion del medicamento")
                     medicina.observacionMedicina = ObservacionM.toString()
-                    //     println("Observacion del medicamento")
-               //     medicina.observacionMedicina = readLine()?.toString() as String
+
                     val cantidadM = JOptionPane.showInputDialog("Ingrese los datos solicitados en el inventario"+ "\n"+ "Cantidad del medicamento")
                     medicina.cantidadMedicina = cantidadM.toInt()
-                    //     println("Cantidad del medicamento")
-               //     medicina.cantidadMedicina = readLine()?.toInt() as Int
+
                     BaseDeDatosMedicina.agregarMedicina(medicina)
 
                     if (estado == 0) {
@@ -116,13 +105,6 @@ num = seleccion.toInt()
                     receta.detalle = detalleR.toString()
 
 
-                    //   println("Detalle de la receta")
-                    //    receta.detalle = readLine()?.toString() as String
-
-                    //    println("Nombre completo |" +"\t" +"|Cedula|")
-                    //     println(  receta.nombreCliente + receta.apellidoCliente +"\t"+  receta.cedulaCliente)
-                    //    println("Detalle de la receta")
-                    //  println("\t"+ receta.detalle)
                     BaseDeDatosMedicina.agregarReceta(receta)
 
                     if (estado == 0) {
