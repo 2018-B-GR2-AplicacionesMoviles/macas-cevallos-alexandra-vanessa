@@ -59,7 +59,7 @@ class pantallados : AppCompatActivity() {
                 datos.add("Tipo" +empleado)
             }
             if (seleccion3.isChecked == true){
-                admin= "Administartivo"
+                admin= "Administrativo"
                 datos.add("Tipo" +admin)
             }
             if (femenino.isChecked == true){
