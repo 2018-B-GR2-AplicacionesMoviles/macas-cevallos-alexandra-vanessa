@@ -67,7 +67,7 @@ class pantallados : AppCompatActivity() {
                 datos.add(fem)
 
             }
-            
+
             if (masculino.isChecked == true){
                 masculin = "Masculino"
                 datos.add(masculin)
