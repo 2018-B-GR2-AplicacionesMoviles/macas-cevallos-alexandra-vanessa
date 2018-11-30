@@ -39,5 +39,15 @@ class pantalladatos : AppCompatActivity() {
 
                     }
                 }
+
+
+        buttoncancelar.setOnClickListener {
+
+        }
+        button2.setOnClickListener {
+            
+        }
+
+
     }
 }
