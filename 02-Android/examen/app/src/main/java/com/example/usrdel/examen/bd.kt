@@ -30,7 +30,7 @@ fun agregar (medicina: medicina){
             for (i in lstMedicina.indices) {
                 if (lstMedicina[i].codigo.equals(codigo)) {
                     lstMedicina.removeAt(i)
-                 
+
                 }
             }
         }
