@@ -1,0 +1,4 @@
+#Thu Nov 29 11:39:16 COT 2018
+base.0=C\:\\Users\\Ale\\Documents\\GitHub\\Aplicaciones moviles\\macas-cevallos-alexandra-vanessa\\02-Android\\m\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\8
+path.0=classes.dex
+renamed.0=classes.dex
