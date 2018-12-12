@@ -3,10 +3,7 @@ package com.example.usrdel.examen
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.usrdel.examen.bd.Companion.lstMedicina
 import kotlinx.android.synthetic.main.activity_pantallacrear.*
-import kotlinx.android.synthetic.main.activity_pantallalistar.*
-import java.util.ArrayList
 
 class pantallacrear : AppCompatActivity() {
 
@@ -24,20 +21,27 @@ class pantallacrear : AppCompatActivity() {
 
     }
    fun agregar(){
-       var med = medicina
-       var codigo1 = editTextcodigo.text.toString()
-       var nombre = editTextnombre.text.toString()
-       var precio = editTextprecio.text.toString()
+       val nombremed = editTextnombre.text.toString()
+       val tipomed = editTextcodigo.text.toString()
+      // val m2 = m2_txt.text.toString()
+       val preciomed = editTextprecio.text.toString()
+
+       val intentRespuesta = Intent()
+
+       intentRespuesta.putExtra("nombre", nombremed)
+       intentRespuesta.putExtra("tipo", tipomed)
+    //   intentRespuesta.putExtra("m2", m2)
+       intentRespuesta.putExtra("precio", preciomed)
+
+       this.setResult(
+           RESULT_OK,
+           intentRespuesta
+       )
+
+       this.finish()
 
 
-       val medic= medicina(codigo= codigo1,
-           nombremed = nombre,
-           precio = precio)
+   }
 
-
-       bd.agregar(medic)
-
-
-    }
 }
 

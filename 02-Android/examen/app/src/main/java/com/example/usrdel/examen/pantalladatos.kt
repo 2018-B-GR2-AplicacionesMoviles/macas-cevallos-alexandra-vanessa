@@ -1,5 +1,6 @@
 package com.example.usrdel.examen
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -21,23 +22,28 @@ class pantalladatos : AppCompatActivity() {
         //devolvermelosdatos en cada uno de los plaintext
 
 
-        listamedicina.onItemSelectedListener =
-                object : AdapterView.OnItemSelectedListener {
-                    override fun onItemSelected(
-                        parent: AdapterView<*>?,
-                        view: View?,
-                        position: Int,
-                        id: Long) {
 
-                   //     val medi = arreglo[position]
+        val casa = intent.getParcelableExtra<medicina?>("medicina")
+        val pos = intent.getIntExtra("pos", 0)
 
-
-                    }
-
-                    override fun onNothingSelected(
-                        parent: AdapterView<*>?) {
-
-                    }
-                }
+        button2.setOnClickListener {
+            this.ActualizarCasa(editText2nombreed.toString(), editTextcodigoed.toString(), editText3precioed.toString(), pos)
+            this.irAListar()
+        }
     }
+
+    fun ActualizarCasa (indiceCasa: String, descipcionIng:String,  precioIng:String, pos:Int):Unit{
+
+        val nuevaCasa: medicina = medicina(indiceCasa,descipcionIng, precioIng)
+
+        bd.Medicina[pos] = nuevaCasa
+
+
+    }
+    fun irAListar(){
+        val intentListar = Intent(this, pantallalistar::class.java);
+        this.startActivity(intentListar)
+    }
+
 }
+

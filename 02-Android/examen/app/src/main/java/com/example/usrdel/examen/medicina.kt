@@ -3,27 +3,32 @@ package com.example.usrdel.examen
 import android.os.Parcel
 import android.os.Parcelable
 
-class  medicina ( var codigo: String,
-                 var nombremed: String,
-                 var precio: String): Parcelable {
+class  medicina (var nombre: String,
+                 var tipo: String,
+
+                 var precio: String
+                ): Parcelable {
+
+
     constructor(parcel: Parcel) : this(
         parcel.readString(),
+
         parcel.readString(),
         parcel.readString()
     ) {
     }
 
+
+
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(codigo)
-        parcel.writeString(nombremed)
+        parcel.writeString(nombre)
+        parcel.writeString(tipo)
+
         parcel.writeString(precio)
     }
 
     override fun describeContents(): Int {
         return 0
-    }
-    override fun toString(): String {
-        return "${codigo} ${nombremed} ${precio}"
     }
 
     companion object CREATOR : Parcelable.Creator<medicina> {
@@ -35,9 +40,14 @@ class  medicina ( var codigo: String,
             return arrayOfNulls(size)
         }
     }
-
-
-
+    override fun toString(): String {
+        return "${nombre} ${tipo} ${precio}"
+    }
 
 }
+
+
+
+
+
 
