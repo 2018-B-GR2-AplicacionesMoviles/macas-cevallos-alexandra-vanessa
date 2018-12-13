@@ -14,33 +14,27 @@ class pantallalistar : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pantallalistar)
 
-       // val arreglo = bd.lstMedicina
-       // val medi1 = medicina (1,"tempra",2.2)
-       // arreglo.add(arreglo)
+        // val arreglo = bd.lstMedicina
+        // val medi1 = medicina (1,"tempra",2.2)
+        // arreglo.add(arreglo)
 
-        val adaptador1 = ArrayAdapter<medicina>(this, android.R.layout.simple_list_item_1,bd.Medicina)
+        val adaptador1 = ArrayAdapter<medicina>(this, android.R.layout.simple_list_item_1, bd.Medicina)
         listamedicina.adapter = adaptador1
 
-        val intentEditar = Intent(this, pantalladatos::class.java)
 
-        listamedicina
-        .onItemClickListener =
-        object : AdapterView.OnItemClickListener{
-        override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        val medicina = bd.Medicina[position]
-        val pos = position
-        intentEditar.putExtra("nombre",medicina)
-        intentEditar.putExtra("posicion", pos)
-        startActivity(intentEditar)
+        listamedicina.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->
 
+            val medicinaSeleccionada = parent.getItemAtPosition(position) as medicina
+            val intentMedicinaSeleccionada = Intent(this, pantalladatos::class.java)
+            intentMedicinaSeleccionada.putExtra("Medicina", medicinaSeleccionada)
+            startActivity(intentMedicinaSeleccionada)
         }
-        }
-        }
-
-
 
 
     }
+
+
+}
 
 
 

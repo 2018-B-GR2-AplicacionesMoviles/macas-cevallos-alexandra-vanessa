@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         buttonbuscar.setOnClickListener {
             buscarmedicina()
         }
-
-
     }
 
     fun crearmedicina() {
@@ -38,39 +36,34 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
-        when (requestCode){
+        when (requestCode) {
             reqCodeCrear -> {
                 when (resultCode) {
                     RESULT_OK -> {
-                        Log.i("medicina", "ok ${data!!.getStringExtra("nombre")}")
-                        Log.i("medicina", "ok ${data!!.getStringExtra("tipo")}")
-
-                        Log.i("medicina", "ok ${data!!.getStringExtra("precio")}")
-
-                        CrearMedicina(data!!.getStringExtra("nombre"), data!!.getStringExtra("tipo"), data!!.getStringExtra("precio"))
+                        CrearMedicina(
+                            data!!.getStringExtra("nombre"),
+                            data!!.getStringExtra("tipo"),
+                            data!!.getStringExtra("precio")
+                        )
                     }
                     RESULT_CANCELED -> {
                         Log.i("Error", "Error no ingreso medicina")
                     }
                 }
-
             }
             else -> {
                 Log.e("--", "--")
             }
         }
     }
-    fun CrearMedicina (nombrem: String, tipom:String, preciom:String):Unit{
 
-        val _medicina: medicina = medicina(nombrem,tipom, preciom)
-
+    fun CrearMedicina(nombrem: String, tipom: String, preciom: String): Unit {
+        val _medicina: medicina = medicina(nombrem, tipom, preciom)
         bd.Medicina.add(_medicina)
-
-
     }
 
     companion object {
-        val reqCodeCrear = 101
+        val reqCodeCrear = 100
     }
 
 }

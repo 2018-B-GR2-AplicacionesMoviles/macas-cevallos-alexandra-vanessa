@@ -16,34 +16,41 @@ class pantalladatos : AppCompatActivity() {
         setContentView(R.layout.activity_pantalladatos)
 
 
-
         //darme los del item selecionado del la pantallalistar
         //buscarenlabbd
         //devolvermelosdatos en cada uno de los plaintext
+        val medicinaRecibida = intent.getParcelableExtra<medicina?>("Medicina")
 
-
-
-        val casa = intent.getParcelableExtra<medicina?>("medicina")
-        val pos = intent.getIntExtra("pos", 0)
-
+        editText2nombreed.setText(medicinaRecibida!!.nombre.toString())
+        editTextcodigoed.setText(medicinaRecibida!!.tipo.toString())
+        editText3precioed.setText(medicinaRecibida!!.precio.toString())
         button2.setOnClickListener {
-            this.ActualizarCasa(editText2nombreed.toString(), editTextcodigoed.toString(), editText3precioed.toString(), pos)
-            this.irAListar()
+            act(editText2nombreed.text.toString(), editTextcodigoed.text.toString(), editText3precioed.text.toString())
+            irAListar()
+        }
+        button3.setOnClickListener() {
+            borrar()
+            irAListar()
         }
     }
 
-    fun ActualizarCasa (indiceCasa: String, descipcionIng:String,  precioIng:String, pos:Int):Unit{
+    fun act(nombreMed: String, codigoMed: String, precioMed: String) {
 
-        val nuevaCasa: medicina = medicina(indiceCasa,descipcionIng, precioIng)
-
-        bd.Medicina[pos] = nuevaCasa
-
-
+        val medicina = medicina(nombre = nombreMed, tipo = codigoMed, precio = precioMed)
+        bd.actualizarMedicina(medicina)
+        val intentMenu = Intent(this, MainActivity::class.java)
+        startActivity(intentMenu)
     }
-    fun irAListar(){
+
+    fun borrar() {
+        bd.eliminarMedicina(editText2nombreed.text.toString())
+    }
+
+    fun irAListar() {
         val intentListar = Intent(this, pantallalistar::class.java);
-        this.startActivity(intentListar)
+        startActivity(intentListar)
     }
+
 
 }
 

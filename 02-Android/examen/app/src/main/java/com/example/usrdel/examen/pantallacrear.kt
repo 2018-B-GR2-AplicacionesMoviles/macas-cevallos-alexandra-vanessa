@@ -15,33 +15,22 @@ class pantallacrear : AppCompatActivity() {
             agregar()
         }
 
-
-
-
-
     }
-   fun agregar(){
-       val nombremed = editTextnombre.text.toString()
-       val tipomed = editTextcodigo.text.toString()
-      // val m2 = m2_txt.text.toString()
-       val preciomed = editTextprecio.text.toString()
 
-       val intentRespuesta = Intent()
+    fun agregar() {
+        val nombremed = editTextnombre.text.toString()
+        val tipomed = editTextcodigo.text.toString()
+        val preciomed = editTextprecio.text.toString()
 
-       intentRespuesta.putExtra("nombre", nombremed)
-       intentRespuesta.putExtra("tipo", tipomed)
-    //   intentRespuesta.putExtra("m2", m2)
-       intentRespuesta.putExtra("precio", preciomed)
-
-       this.setResult(
-           RESULT_OK,
-           intentRespuesta
-       )
-
-       this.finish()
-
-
-   }
-
+        val intentRespuesta = Intent()
+        intentRespuesta.putExtra("nombre", nombremed)
+        intentRespuesta.putExtra("tipo", tipomed)
+        intentRespuesta.putExtra("precio", preciomed)
+        this.setResult(
+            RESULT_OK,
+            intentRespuesta
+        )
+        this.finish()
+    }
 }
 

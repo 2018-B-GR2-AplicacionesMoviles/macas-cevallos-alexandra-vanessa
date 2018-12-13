@@ -5,25 +5,20 @@ import android.os.Parcelable
 
 class  medicina (var nombre: String,
                  var tipo: String,
-
                  var precio: String
                 ): Parcelable {
 
 
     constructor(parcel: Parcel) : this(
         parcel.readString(),
-
         parcel.readString(),
         parcel.readString()
     ) {
     }
 
-
-
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(nombre)
         parcel.writeString(tipo)
-
         parcel.writeString(precio)
     }
 
@@ -41,7 +36,10 @@ class  medicina (var nombre: String,
         }
     }
     override fun toString(): String {
-        return "${nombre} ${tipo} ${precio}"
+        return "nombre: ${nombre} " +
+                "\ntipo: ${tipo}" +
+                "\nprecio: ${precio}"
+
     }
 
 }
